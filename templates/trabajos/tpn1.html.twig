@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+ 
+{% block title %}TPN1{% endblock %}
+ 
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+ 
+<div class="example-wrapper">
+    <h1 style="text-align: center">TPN1 - Curso Symfony 4</h1>
+ 
+    <p>1) <b>MVC</b> es un patrón de diseño de software, utilizado para separar el código por sus distintas responsabilidades funcionales, dichas responsabilidades se determinan capas que se encargan de hacer una tarea específica y concreta, esto ofrece principalmente beneficios como: la facilidad de mantenimiento, la reutilización de código y la separación de conceptos en forma clara facilitando las tareas de desarrollo. Su base es la separación del código en tres capas diferentes, limitadas por su responsabilidad, las capas son: Modelos, Vistas y Controladores, también conocido como Model, Views & Controllers.</p>
+    <p>2) <b>Modelos:</b> es la capa encargada de trabajar con los datos, habitualmente disponibles en una base de datos, por lo tanto esta capa tendrá todas las consultas para acceder a la misma y poder recuperar información y/o actualizarla. El acceso a los datos se basa en clases y objetos, y se puede trabajar con librerías PDO (para PHP) o algún ORM como Doctrine.</p>
+    <p><b>Vistas:</b> es la capa encargada de reproducir la visualización de las interfaces de usuario, en general se realizan en HTML. Las vistas no acceden directamente a los datos sino que lo hacen solicitándolos a los modelos y estos generan la salida según lo requiera la aplicación.</p>
+    <p><b>Controladores:</b> esta capa contiene el código que responde a las acciones solicitadas en la aplicación, como por ej. Mostrar un elemento, buscar cierta información, etc. Su función es la de enlazar las vistas y los modelos solicitando las necesidades que puedan requerirse y aplicando la lógica de negocio que la nuestra aplicación necesite.</p>
+    <p>3) <b>Symfony</b> es un entorno de trabajo estandarizado (framework PHP) que se utiliza para el desarrollo de aplicaciones web. Una de las principales ventajas de Symfony es que posee una licencia MIT, lo que es lo mismo que una licencia de software libre permisivo, que se puede utilizar dentro del software del propietario y al no poseer Copyright permite su modificación.</p>
+       <p> Entre sus principales características tenemos: </p>
+        <ul>
+            <li>Permite crear desde sitios webs sencillos hasta macro proyectos y aplicaciones complejas.</li>
+            <li>Al poseer una gran comunidad de desarrolladores, garantiza formación continua.</li>
+            <li>Sus componentes están altamente testeados. </li>
+        </ul>
+        <p>Las aplicaciones realizadas con este framework se configuran modificando los archivos almacenados en la carpeta “config”. Un archivo también importante es el “.env” que nos permite entre otras configuraciones indicar la conexión a la base de datos a utilizar.</p>
+        </p>
+    <p>4) Nuevo proyecto symfony creado de acuerdo a los pasos indicados.</p>
+    <p>5) Url del repositorio en Github: </p>
+        <p> <a href="https://github.com/mmasdea/curso_symfony_abril_21" target="_blank"> https://github.com/mmasdea/curso_symfony_abril_21</a></p>  
+
+    <ul>
+        <li><a href="/home">Volver al Inicio</a></li>
+    </ul>
+</div>
+{% endblock %}
