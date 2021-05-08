@@ -39,7 +39,7 @@ class UserController extends AbstractFOSRestController
 
     
     /**
-     * @Rest\Post("/alta",name="api_alta_user")
+     * @Rest\Get("/alta",name="api_alta_user")
      * @return Response
      */
     public function altaUser(Request $request){
