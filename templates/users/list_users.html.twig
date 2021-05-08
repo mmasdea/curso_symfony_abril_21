@@ -10,13 +10,28 @@
  
 <div class="example-wrapper">
 
+<h1>Listado de Usuarios Registrados</h1>
 
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Email</th>
+    </tr>
 
     {% for  user in usuarios %}
-        <span>Valor de variable: {{ user.id }}</span>
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.nombre }}</td>
+            <td>{{ user.apellido }}</td>
+            <td>{{ user.dni }}</td>
+            <td>{{ user.email }}</td>
+        </tr>
     {% endfor %}
 
-
+</table>
 
     <ul>
         <li><a href="/home">Volver al Inicio</a></li>
