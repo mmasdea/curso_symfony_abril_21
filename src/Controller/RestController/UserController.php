@@ -27,14 +27,38 @@ class UserController extends AbstractFOSRestController
      * @return Response
      */
     public function getAllUser(Request $request) {
-        
-        
-        $em = $this->getDoctrine()->getManager();
 
+        $em = $this->getDoctrine()->getManager();
         //$hola = $this->formatUser();
         $listaUsuarios = $em->getRepository(Users::class)->findAll();
                 
         return $this->handleView($this->view($listaUsuarios,200));
+    }
+
+     /**
+     * @Rest\Post("/validacion", name="validacion")
+     * @return Response
+     */
+
+     public function validaUser(Request $request) {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $email = $request->get('login_email');
+        $password = $request->get('login_password');
+        $resultado = $em->getRepository(Users::class)->findBy(
+            array(
+                'email' => $email,
+                'password' => $password
+            )
+        );       
+
+        if(count($resultado)==0){
+            return $this->handleView($this->view($resultado,200));            
+        } else {
+            return $this->handleView($this->view($resultado,200));
+        }
+
     }
 
     
