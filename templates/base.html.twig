@@ -14,8 +14,12 @@
         {% endblock %}
     </head>
     <body>
+        {% block header %}
+            <h2 style="text-align: center; color: white; background-color:blue; border:1px solid; height: 40px; padding-top: 10px">Curso Symfony 4 - Abril 2021</h2>
+        {% endblock %}
+
         {% block body %} 
-            <h1 style="text-align: center;">Curso Symfony 4 - 2021</h1>
+
             <h3 style="text-align: center;">Plantilla "base.html.twig"</h3>
             <ul>
                 <li style="text-align: center;"><a href="/home">Volver</a></li>
@@ -23,7 +27,7 @@
         {% endblock %}
 
         {% block footer %}
-            <h4 style="text-align: center; color: white; background-color:black; border:1px solid; height: 30px; padding-top: 10px">Miguel Angel Masdea - Abril 2021</h4>
+            <h4 style="text-align: center; color: white; background-color:black; border:1px solid; height: 30px; padding-top: 10px">Miguel Angel Masdea | mmasdea@astillero.gba.gov.ar</h4>
         {% endblock %}
     </body>
 </html>

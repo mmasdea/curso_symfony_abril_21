@@ -54,10 +54,11 @@ class UserController extends AbstractFOSRestController
         );       
 
         if(count($resultado)==0){
-            return $this->handleView($this->view($resultado,200));            
-        } else {
-            return $this->handleView($this->view($resultado,200));
-        }
+            $resultado="Credenciales Invalidas";
+        } 
+
+        return $this->handleView($this->view($resultado,200));            
+
 
     }
 

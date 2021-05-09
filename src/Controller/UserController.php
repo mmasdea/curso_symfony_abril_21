@@ -18,9 +18,41 @@ class UserController extends AbstractController
     public function loginAction()
     {
         return $this->render('login.html.twig');
-    }   
+    }  
+    
+    /**
+     * @Route("/login_api", name="login_api")
+     */
+    public function login_apiAction()
+    {
+        return $this->render('login_api.html.twig');
+    }  
 
-        /**
+    /**
+     * @Route("/validation", name="validation")
+     */
+    public function loginValidation(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $email = $request->get('login_email');
+        $password = $request->get('login_password');
+        $resultado = $em->getRepository(Users::class)->findBy(
+            array(
+                'email' => $email,
+                'password' => $password
+            )
+        ); 
+
+        if(count($resultado)==0){
+            $resultado="Credenciales Invalidas - Reingrese";
+            return $this->render('login.html.twig',["res" => $resultado]);
+        } else {
+            return $this->render('Welcome.html.twig',["usuario" => $resultado]);            
+        }
+    }  
+
+    /**
      * @Route("/list_all_users", name="list_all_users")
      * 
      */
@@ -31,5 +63,5 @@ class UserController extends AbstractController
             //dump($listaUsuarios);
             //die();
             return $this->render('users/list_users.html.twig',["usuarios" => $listaUsuarios]);
-        }
+    }
 }

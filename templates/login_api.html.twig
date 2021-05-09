@@ -3,9 +3,9 @@
 
 <div style="text-align: center;">
 
-    <h3>LOGIN</h3>
+    <h3>LOGIN - Validación con API</h3>
 
-    <form action="/validation" method="post" >
+    <form action="api/users/validacion" method="post" >
         <div>
             <div >
                 <label for="login_email" class="required">Email</label>
@@ -17,12 +17,6 @@
                 <input type="password" id="login_password" name="login_password" required="required" />
             </div>
             <br>
-
-
-        {% if res|default %}
-            <p style=" color:red; text-align:center; ">{{ res }}</p>
-        {% endif %}
-
             <div>
                 <button type="submit" id="login_submit" name="login_submit">Ingresar</button>
             </div>
